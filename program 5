@@ -1,0 +1,32 @@
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+void main(){
+double S[20], op1,op2;
+int top=-1,i;
+char postfix[20],symbol;
+printf("\n Enter the postfix expression");
+gets(postfix);
+for(i=0,i<strlen(postfix);i++)
+symbol=postfix[i];
+if(isdigit(symbol))
+S[++top]=symbol-'0';
+else{
+op 2=S[top--];
+op 1=S[top--];
+S[++top]=compute(symbol,op 1,op 2);
+}
+}
+printf("the result is :%f\n,S[top]);
+}
+double compute(char symbol,double op 1,double op 2);
+switch(symbol){
+case '+':return (op1+op2);
+case '-':return (op1-op2);
+case '*':return (op1*op2);
+case '/':return (op1/op2);
+case '^':return pow(op1,op2);
+case '%':return (op1%op2);
+default:return 0;
+}
